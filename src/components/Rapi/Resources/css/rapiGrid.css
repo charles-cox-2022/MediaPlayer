@@ -1,0 +1,49 @@
+.grid-main {
+    display: grid;
+    grid-template-columns: repeat(20, 4%);
+    grid-template-rows: repeat(20,4%);
+    width: 100vw;
+    min-height: 100vh;
+    z-index: 10
+}
+.grid-dev {
+    border: 5px double pink;
+}
+.grid-item {
+    border-radius: 12px;
+    border: 5px solid black;
+}
+.grid-top {
+    overflow: hidden;
+    grid-column: 1 / span 20;
+    grid-row: 1 / span 3;
+}
+.grid-nav {
+    grid-column: 3 / span 16;
+    grid-row: 1 / span 3;
+}
+.grid-profile {
+    grid-column: 19 / span 2;
+    grid-row: 1 / span 3;
+}
+.grid-logo {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 3;
+    width: 100%;
+    height: 100%;
+}
+.grid-left {
+    grid-column: 1 / span 2;
+    grid-row: 4 / span 17;
+}
+.grid-right {
+    grid-column: 19 / span 2;
+    grid-row: 4 / span 17;
+
+}
+.grid-content {
+    grid-column: 3 / span 16;
+    grid-row: 4 / span 17;
+
+}
+

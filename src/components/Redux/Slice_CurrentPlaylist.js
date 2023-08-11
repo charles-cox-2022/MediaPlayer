@@ -1,0 +1,1 @@
+//Stores data about the current playlist.

@@ -1,0 +1,1 @@
+Add rapiSlice to Store for App.js to make data usable within the rest of the program.
