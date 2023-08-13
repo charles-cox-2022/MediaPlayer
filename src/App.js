@@ -1,5 +1,6 @@
 //Required Libraries
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 //Required CSS files
 import './resources/css/grid.css';
@@ -13,10 +14,19 @@ import ProfileIcon from './components/ProfileIcon/ProfileIcon';
 import Nav from './components/Nav/Nav';
 
 //If the user is not logged in, only show the login screen.
-const display = (loggedIn) => {
+const display = (loggedIn, PopUp) => {
+  //ADD CASE STATEMENT, if pop up is enabled, then display pop up.
+  if(PopUp != undefined && loggedIn === true){
+    return(
+      <div className='grid-content grid-item center'>
+        {PopUp}
+      </div>
+    )
+  }
   if(loggedIn === true){
     return(
       <div className='grid-content grid-item center'>
+        
         <MediaPlayer/>
       </div>
     )
@@ -33,7 +43,7 @@ const display = (loggedIn) => {
 function App() {
   //Watch the login status, when it changes so when the data using this.
   let isLoggedIn = useSelector((state) => state.profile.isLoggedIn)
-
+  const [PopUp,setPopUp] = useState(undefined);
   return (
     
       <div className="App">
@@ -41,7 +51,7 @@ function App() {
           <div className='grid-nav grid-item center'>
             <div className='nav-wrapper'>
               {/*The Nav is meant to house access to the various pages and pop ups in this app.*/}
-              <Nav/>
+              <Nav setPopUp={setPopUp}/>
             </div>
           </div>
           <div className='grid-profile grid-item center'>
@@ -50,7 +60,7 @@ function App() {
               <ProfileIcon/>
             </div>
           </div>
-          {display(isLoggedIn)}
+          {display(isLoggedIn,PopUp)}
           
         </div>
       </div>

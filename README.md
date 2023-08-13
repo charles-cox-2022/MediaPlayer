@@ -14,10 +14,9 @@
 
 **Components**
 - Nav 
-    - Toggle between Video and Audio Only
     - Option: Edit Playlists
     - DropDown: Select Playlist
-- Media Player (Always On Screen - This is so music can be playing in background while other things are done.)
+- Media Player
     - IMG/Video of Content
         - Grows/Shrinks with Available Space
     - DropDown: View Next Videos (Collapses to right)
@@ -59,3 +58,5 @@
 # 0.5.0
 - Create/Edit/Delete Playlist Functionality
 - Add/Remove Video from Playlist
+# 0.6.0
+- Add Spotify Search (Search Spotify, if title is clicked on it will search YouTube for related content)

@@ -5,3 +5,7 @@
 + Added Profile (Mini) Component Skeleton
 + Added Forced Login upon loading
 + Added Comments to better organize code
+# Version 0.0.2
++ Added Settings Menu with GRID Placements
++ Added Search Functionality
++ Added Ability to click on a result and have it load a preview. 
