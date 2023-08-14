@@ -14,7 +14,7 @@ const Nav = (props) => {
     return(
         <React.Fragment>
             <div className="center">
-                <h1>-Nav-</h1>
+                <h1>-Select Playlist-</h1>
                 <h1 onClick={() => {props.setPopUp(<SettingsMenu setPopUp={props.setPopUp}/>)}}>-Settings-</h1>
             </div>
             

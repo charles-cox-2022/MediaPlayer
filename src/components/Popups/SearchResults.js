@@ -11,7 +11,7 @@ const SearchResults = (props) => {
         if(e !== undefined){
             list = e.map((x) => 
                 <li className="mediaIconListItem" key={e.ID}>
-                    <button className="mediaIcon" onClick={() => {props.setPreview(x.SongID)}}>
+                    <button className="mediaIcon" onClick={() => {props.setPreview(x)}}>
                         <p className="mediaIconText">{x.SongName}</p><br/>
                         <img className="mediaIconImg"src={x.SongImg}></img>
                     </button>

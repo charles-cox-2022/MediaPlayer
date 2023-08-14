@@ -27,8 +27,9 @@ const SettingsMenu = (props) => {
             <div className="settings-grid-title">
                 <h1>Settings Menu</h1>
             </div>
-            <div className="settings-grid-preview">
-                <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${preview}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div className="settings-grid-preview flex-column">
+                <h1>{preview.SongName}</h1>
+                <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${preview.SongID}`} title={preview.SongName} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div className="settings-grid-nav">
                 <h1 className="center" onClick={() => {setChoice(<PlaylistSettings/>)}}>Playlist <br/> Settings</h1>
