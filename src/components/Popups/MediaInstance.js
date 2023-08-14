@@ -1,1 +1,0 @@
-//This component is the button you press to add a media to a playlist.

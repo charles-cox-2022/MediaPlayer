@@ -31,8 +31,8 @@ const SettingsMenu = (props) => {
                 <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${preview}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div className="settings-grid-nav">
-                <h1 onClick={() => {setChoice(<PlaylistSettings/>)}}>--Playlist Settings--</h1>
-                <h1 onClick={() => {setChoice(<SearchMedia setPreview={setPreview}/>)}}>--Search Media--</h1>
+                <h1 className="center" onClick={() => {setChoice(<PlaylistSettings/>)}}>Playlist <br/> Settings</h1>
+                <h1 className="center" onClick={() => {setChoice(<SearchMedia setPreview={setPreview}/>)}}>Search <br/> Media</h1>
             </div>
             {display(choice)}
             

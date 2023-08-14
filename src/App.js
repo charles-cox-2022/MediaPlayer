@@ -25,7 +25,7 @@ const display = (loggedIn, PopUp) => {
   }
   if(loggedIn === true){
     return(
-      <div className='grid-content grid-item center'>
+      <div className='grid-content grid-item center padding15'>
         
         <MediaPlayer/>
       </div>

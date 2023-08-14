@@ -19,13 +19,7 @@ export const slicePlaylists = createSlice({
                     return(state)
                 }
             }
-            
             state[state.length] = action.payload;
-            return(state)
-        },
-        userLogout: (state, action) => {
-            state = defaultState;
-            console.log('logged out');
             return(state)
         }
     }

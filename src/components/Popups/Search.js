@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 
 //Required Components
 import SearchResults from "./SearchResults";
+
 //Required Variables
 import { updateSearchResults } from "../Redux/Slice_SearchResults";
 
