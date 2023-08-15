@@ -20,10 +20,13 @@
 .grid-auth {
   grid-column: 1 / span 20;
   grid-row: 1 / span 20;
+  z-index: 1000;
 }
 .grid-nav {
   grid-column: 3 / span 16;
   grid-row: 2 / span 2;
+  display: flex;
+  justify-content: center;
 
 }
 

@@ -1,0 +1,39 @@
+.nav-wrapper {
+    display: flex;
+    position: relative;
+    justify-content: start;
+    align-items: start;
+}
+.nav {
+    display: flex;
+    position: relative;
+    justify-content: start;
+    align-items: start;
+    
+}
+.playlist-dropdown-wrapper {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+
+}
+
+.playlist-dropdown {
+    position: relative;
+    display: none;
+    z-index: 100;
+    height: 350px;
+    overflow-y: scroll;
+}
+.playlist-dropdown-wrapper:hover  .playlist-dropdown{
+    display: block;
+}
+.playlist-dropdown:hover {
+    display: block;
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+

@@ -48,7 +48,7 @@ function App() {
     
       <div className="App">
         <div className='grid-main-wrapper'>
-          <div className='grid-nav grid-item center'>
+          <div className='grid-nav grid-item'>
             <div className='nav-wrapper'>
               {/*The Nav is meant to house access to the various pages and pop ups in this app.*/}
               <Nav setPopUp={setPopUp}/>

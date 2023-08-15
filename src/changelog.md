@@ -1,9 +1,10 @@
 # Version 0.0.4
 + Added Modifications to CSS of Iframes and Scroll Bars. 
-* GOAL: Add Dropdown to Nav Bar for following Goal
-* GOAL: Add Ability to choose from known playlists
-* GOAL: Add Ability to create new playlists
-* GOAL: Add Ability to Add/Remove Songs from Current Playlist (Also Updates the same playlist in the known playlists)
++ Added Dropdown to Nav Bar for following Goal
++ Added Ability to choose from known playlists
+* Added Ability to Create new playlists
+* Added Ability to Add/Remove Songs from Current Playlist (Also Updates the same playlist in the known playlists)
+* GOAL: Update Project Planned Versions
 # Version 0.0.3
 + Added Main YouTube Player
 + Added Default Playlist

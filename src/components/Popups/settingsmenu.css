@@ -1,7 +1,10 @@
 /*------------------------------------------------------------------------------
 ------------------------------------- GRID -------------------------------------
 ------------------------------------------------------------------------------*/
-
+.settings-buttons {
+    
+    justify-content: end;
+}
 .settings-grid-wrapper {
     display: grid;
     grid-template-columns: repeat(20, 5%);
@@ -11,11 +14,13 @@
     z-index: 10;
 }
 .settings-grid-playlist-settings {
+    height: 500px;
     grid-column: 2 / span 8;
     grid-row: 5 / span 17;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
+    padding: 25px 25px 25px 0px;
 }
 .settings-grid-preview {
     grid-column: 10 / span 10;
@@ -37,6 +42,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 25px;
 }
 .settings-grid-close {
     grid-column: 19 / span 2;   
@@ -53,9 +59,13 @@
     align-items: center;
 }
 /*------------------------------------------------------------------------------
-------------------------------------- GRID -------------------------------------
+------------------------------------- Misc -------------------------------------
 ------------------------------------------------------------------------------*/
-
+.addMedia:hover {
+    font-size: 24px;
+    color: red;
+    
+}
 ::-webkit-scrollbar {
     background-color: black;
     border-radius: 12px;

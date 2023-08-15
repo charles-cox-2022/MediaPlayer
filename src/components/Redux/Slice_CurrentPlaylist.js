@@ -314,13 +314,40 @@ export const sliceCurrentPlaylists = createSlice({
     initialState: defaultState,
     reducers: {
         updateCurrentPlaylist: (state, action) => {
-            state = action.payload;
+            state[0] = action.payload;
+            return(state)
+        },
+        addSong: (state, action) => {
+            console.log('Adding Song')
+            let len = state[0].media.length
+            state[0].media.push({
+                "ID": len,
+                "SongID": action.payload.SongID,
+                "SongName": action.payload.SongName,
+                "SongImg": action.payload.SongImg
+            })
+            return(state)
+        },
+        removeSong: (state, action) => {
+            let playlist = []
+            state[0].media.forEach(e => {
+                if(e.ID != action.payload.ID){
+                    playlist.push(e)
+                }                
+            });
+            state[0].media = playlist
+            return(state)
+        },
+        updateName: (state, action) => {
+            console.log('updating name');
+            state[0].name = action.payload
             return(state)
         }
+
     }
 })
 
-export const { updateCurrentPlaylist } = sliceCurrentPlaylists.actions;
+export const { updateCurrentPlaylist, addSong, updateName, removeSong } = sliceCurrentPlaylists.actions;
 
 
 export default sliceCurrentPlaylists.reducer

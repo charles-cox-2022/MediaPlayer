@@ -2,22 +2,22 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
 //Required Variables
-import { addSong } from "../Redux/Slice_CurrentPlaylist";
+import {  removeSong } from "../Redux/Slice_CurrentPlaylist";
 
 
-const SearchResults = (props) => {
+const CurrentPlaylistItems = () => {
     const dispatch = useDispatch();
-    const results = useSelector((state) => state.searchResults)
+    const results = useSelector((state) => state.currentPlaylist[0].media)
             
     let list;
     const display = (e) => {
         if(e !== undefined){
             list = e.map((x) => 
                 <li className="mediaIconListItem" key={x.ID}>
-                    <button className="mediaIcon" onClick={() => {props.setPreview(x)}}>
+                    <button className="mediaIcon">
                         <p className="mediaIconText">{x.SongName}</p>
                         <h1 className="mediaIconText addMedia"
-                        onClick={() => {dispatch(addSong(x))}}>+</h1>
+                        onClick={() => {dispatch(removeSong(x))}}>-</h1>
                         <img className="mediaIconImg"src={x.SongImg}></img>
                     </button>
                 </li>
@@ -36,4 +36,4 @@ const SearchResults = (props) => {
     )
 }
 
-export default SearchResults;
+export default CurrentPlaylistItems;
