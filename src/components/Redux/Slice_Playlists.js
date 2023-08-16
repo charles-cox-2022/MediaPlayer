@@ -383,8 +383,9 @@ export const slicePlaylists = createSlice({
         },
         createPlaylist: (state, action) => {
             console.log('Creating playlist');
-            let i = current(state).length
-            state[i] = playlistTemplate(i)
+            console.log(action.payload.playlist)
+            let i = action.payload.playlist.id
+            state[i] = action.payload.playlist
             return(state)
         }, 
         deletePlaylist: (state,action) => {
