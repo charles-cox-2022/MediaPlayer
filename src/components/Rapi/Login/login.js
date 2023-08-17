@@ -3,6 +3,10 @@ import { useDispatch } from 'react-redux';
 import {useState, useEffect} from "react";
 import useFetch from "react-fetch-hook";
 import { userLogin } from "../Redux/profileSlice";
+import getPlaylists from "../../API/getPlaylists";
+import { createPlaylist, updatePlaylists } from "../../Redux/Slice_Playlists";
+import { updateCurrentPlaylist } from "../../Redux/Slice_CurrentPlaylist";
+import savePlaylists from "../../API/savePlaylists";
 
 const Login = (props) => {
    //initialize dispatch
@@ -54,8 +58,34 @@ useEffect(()=>{
                 username: data.username,
                 isAdmin: data.isAdmin,
                 isLoggedIn: true
+            }))
+            getPlaylists(data.id).then((res) => {
+                if(res[0] === undefined){
+                    let newPlaylist = [{
+                        id: -1,
+                        pId: '',
+                        name: 'New Playlist',
+                        media: [
+                            {
+                            'ID':0,
+                            'SongID':"okVTSehE414",
+                            'SongImg':"https://i.ytimg.com/vi/okVTSehE414/default.jpg",
+                            'SongName':"IVE"
+                        }
+                        ]                    
+                    }]
+                    savePlaylists(newPlaylist, data.id).then((res2) => {
+                        
+                        dispatch(createPlaylist(res2))
+                        dispatch(updatePlaylists([res2.playlist]))
+                        dispatch(updateCurrentPlaylist(res2.playlist))
+                    })
+                    
+                } else {
+                    dispatch(updatePlaylists(res))
+                    dispatch(updateCurrentPlaylist(res[0]))
+                }
             })
-            )
         } else {
         console.log('Login Failed: '+ JSON.stringify(data))
         setStatusMessage(`Invalid Username or Password`);

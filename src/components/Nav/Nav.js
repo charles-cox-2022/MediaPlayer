@@ -18,22 +18,35 @@ const Nav = (props) => {
     const dispatch = useDispatch();
     const currentPlaylist = useSelector((state) => state.currentPlaylist)
     const playlists = useSelector((state) => state.playlists)
-
+    let list;
     const display = () => {
-        let list = playlists.map((x) => 
-        <li className="mediaIconListItem" key={x.id}>
-            <button className="mediaIcon" onClick={() => {dispatch(updateCurrentPlaylist(x))}}>
-                <p className="mediaIconText">{x.name}</p><br/>
-                <img className="mediaIconImg"src={x.media[0].SongImg}></img>
-            </button>
-        </li>
-    )
+        if(playlists[0] === undefined){
 
+        } else {
+        list = playlists.map((x) => 
+            <li className="mediaIconListItem" key={x.id}>
+                <button className="mediaIcon" onClick={() => {dispatch(updateCurrentPlaylist(x))}}>
+                    <p className="mediaIconText">{x.name}</p><br/>
+                    <img className="mediaIconImg"src={x.media[0].SongImg}></img>
+                </button>
+            </li>
+
+            )
+        }
+
+        let name;
+        if(currentPlaylist[0] === undefined){
+            name = 'No Playlist'
+        } else {
+            name = currentPlaylist[0].name
+        }
 
         return(
             <div className="playlist-dropdown-wrapper">
                 <h1 className="playlist-dropdown-trigger">
-                    -{currentPlaylist[0].name}-
+                    -{
+                        name
+                    }-
                 </h1>
                 <div className="playlist-dropdown">
                     <ul>

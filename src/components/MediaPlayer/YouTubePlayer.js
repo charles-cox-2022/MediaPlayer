@@ -22,7 +22,7 @@ const YouTubePlayer = () => {
     }
     //set playlist
     const setPlaylist = () => {
-
+        if(playlist[0] === undefined){} else {
         if(iframe !== undefined && iframe.h !== null){
             let arr = [];
             playlist[0].media.forEach(y=> {
@@ -31,6 +31,7 @@ const YouTubePlayer = () => {
             iframe.loadPlaylist({playlist: arr});
         }
     }
+}
     //When Playlist Changes, reload playlist
     useEffect(() => {
         if(iframe !== undefined && iframe.h !== null){
