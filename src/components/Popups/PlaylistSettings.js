@@ -22,7 +22,14 @@ const PlaylistSettings = () => {
         id: -1,
         pId: '',
         name: 'New Playlist',
-        media: []
+        media: [
+            {
+            'ID':0,
+            'SongID':"okVTSehE414",
+            'SongImg':"https://i.ytimg.com/vi/okVTSehE414/default.jpg",
+            'SongName':"IVE"
+        }
+        ]
     
     }]
 
