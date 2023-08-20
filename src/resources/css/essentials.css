@@ -7,12 +7,14 @@
     flex-direction: column;
 }
 .max {
-    display: flex;
-    flex-grow: 1;
-    flex-shrink: 1;
+    width: 100%;
+    height: 100%;
 }
 .padding15 {
     padding: 15px;
+}
+.padding5 {
+    padding: 5px;
 }
 iframe {
     width: 100%;

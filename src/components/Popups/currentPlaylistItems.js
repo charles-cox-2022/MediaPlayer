@@ -28,10 +28,12 @@ const CurrentPlaylistItems = () => {
     }
 
     return(
-        <div id="results-parent">
-            <ul id='SearchResults'>
-                {display(results)}
-            </ul>
+        <div className="search-results-box">
+            <div id="results-parent">
+                <ul id='SearchResults'>
+                    {display(results)}
+                </ul>
+            </div>
         </div>
     )
 }

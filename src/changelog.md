@@ -5,6 +5,7 @@
 + Added Default Playlist when a new user logs in.
 + Added a load feature when someone logs it, it automatically reloads their playlists.
 + Fixed Issue where creating a playlist would overwrite other playlists at times. Each playlist now will have a unique number from ALL other playlists
++ Added more CSS to better format the site.
 # Version 0.0.4
 + Added Modifications to CSS of Iframes and Scroll Bars. 
 + Added Dropdown to Nav Bar for following Goal

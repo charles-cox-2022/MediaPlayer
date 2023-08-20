@@ -60,10 +60,11 @@ const SearchMedia = (props) => {
 
     return(
         <div className="settings-grid-search-media center flex-column">
-            <h1>Search Media</h1>
-            <div>
+
+            <div className="center">
                 <label style={{fontSize:"21px"}} htmlFor="Playlist-Search">Search: </label>
                 <input 
+                className="inputBox"
                 //When Enter is pressed, trigger searching
                 onKeyDown={(event) => {
                     if(event.key === 'Enter' && isSubmitted === false){
@@ -76,7 +77,7 @@ const SearchMedia = (props) => {
                 name="Playlist-Search">
                 </input><br/>
             </div>
-            <div className="max">
+            <div className="search-results-box">
                 {/* This contains Search Result Instances */}
                 <SearchResults setPreview={props.setPreview}/>
             </div>

@@ -38,7 +38,7 @@ const SettingsMenu = (props) => {
             {display(choice)}
             
             <div className="settings-grid-close">
-                <h1 onClick={() => {props.setPopUp(undefined)}}>Close</h1>
+                <h1 className="button" onClick={() => {props.setPopUp(undefined)}}>Close</h1>
             </div>
         </div>
     )

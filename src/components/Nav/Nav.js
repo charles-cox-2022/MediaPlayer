@@ -43,10 +43,10 @@ const Nav = (props) => {
 
         return(
             <div className="playlist-dropdown-wrapper">
-                <h1 className="playlist-dropdown-trigger">
-                    -{
+                <h1 className="playlist-dropdown-trigger button">
+                    {
                         name
-                    }-
+                    }
                 </h1>
                 <div className="playlist-dropdown">
                     <ul className="playlist-dropdown-item">
@@ -61,9 +61,9 @@ const Nav = (props) => {
 
     return(
         <React.Fragment>
-            <div className="nav">
+            <div className="nav center">
                 {display()}
-                <h1 onClick={() => {props.setPopUp(<SettingsMenu setPopUp={props.setPopUp}/>)}}>-Settings-</h1>
+                <h1 className="button" onClick={() => {props.setPopUp(<SettingsMenu setPopUp={props.setPopUp}/>)}}>Settings</h1>
             </div>
             
         </React.Fragment>

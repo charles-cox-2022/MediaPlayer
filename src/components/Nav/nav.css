@@ -2,13 +2,10 @@
     display: flex;
     position: relative;
     justify-content: start;
-    align-items: start;
 }
 .nav {
     display: flex;
     position: relative;
-    justify-content: start;
-    align-items: start;
     
 }
 .playlist-dropdown-wrapper {
@@ -18,15 +15,19 @@
     flex-direction: column;
 
 }
+.playlist-dropdown-trigger {
+    margin: 0px;
+}
 .playlist-dropdown {
     position: absolute;
-    top: 100%;
+    top: 95%;
     left: 0;
     z-index: 1000;
     display: none;
     overflow-y: scroll;
     height: 470px;
 }
+
 .playlist-dropdown-wrapper:hover  .playlist-dropdown{
     display: block;
 }
