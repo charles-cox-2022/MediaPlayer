@@ -49,7 +49,7 @@ const Nav = (props) => {
                     }-
                 </h1>
                 <div className="playlist-dropdown">
-                    <ul>
+                    <ul className="playlist-dropdown-item">
                         {
                             list
                         }

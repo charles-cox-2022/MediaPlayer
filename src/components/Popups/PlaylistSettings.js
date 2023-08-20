@@ -51,7 +51,8 @@ const PlaylistSettings = () => {
                 <input 
                     type="text" 
                     id="playlistName" 
-                    name="playlistName" 
+                    name="playlistName"
+                    className="inputBox" 
                     placeholder={currentPlaylist[0].name}
                     onKeyDown={(event) => {
                         if(event.key === 'Enter'){

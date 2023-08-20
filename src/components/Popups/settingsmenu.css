@@ -61,13 +61,26 @@
 /*------------------------------------------------------------------------------
 ------------------------------------- Misc -------------------------------------
 ------------------------------------------------------------------------------*/
+
+.settingsTab {
+    border: 2px solid black;
+    background-color: white;
+    width: 50%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 12px 12px 0px 0px;
+    margin: 0px;
+}
+.settingsTab:hover {
+    background-color: beige;
+}
 .addMedia:hover {
     font-size: 24px;
     color: red;
     
 }
 ::-webkit-scrollbar {
-    background-color: black;
+    background-color: none;
     border-radius: 12px;
 }
 ::-webkit-scrollbar-thumb {
@@ -86,9 +99,15 @@
     padding: 0px;
     background-color: black;
     border-radius: 12px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+#results-parent {
+    width: 100%;
 }
 .mediaIconListItem {
     list-style: none;
+
 }
 .mediaIcon {
     display: flex;
