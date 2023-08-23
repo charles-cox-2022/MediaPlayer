@@ -46,7 +46,7 @@ function App() {
   const [PopUp,setPopUp] = useState(undefined);
   return (
     
-      <div className="App">
+      <div className="App" id="app-wrapper">
         <div className='grid-main-wrapper'>
           <div className='grid-nav grid-item'>
             <div className='nav-wrapper center'>

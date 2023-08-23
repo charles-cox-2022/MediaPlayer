@@ -1,6 +1,28 @@
-.profile-dropdown-trigger {
-
+.profile-wrapper {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    position: relative;
 }
+
 .profile-dropdown {
-    
+    position: absolute;
+    top: 150%;
+    left: -73%;
+    z-index: 1000;
+    display: none;
+    overflow-y: scroll;
+}
+.profile-dropdown:hover {
+    display: flex;
+}
+.profile-wrapper:hover .profile-dropdown {
+    display: flex;
+}
+.grid-profile:hover .profile-dropdown {
+    display: flex;
+}
+.profile-dropdown-trigger {
+    margin: 0px;
 }
