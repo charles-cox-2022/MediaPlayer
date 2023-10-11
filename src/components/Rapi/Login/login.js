@@ -13,7 +13,7 @@ const Login = (props) => {
    const dispatch = useDispatch();
 
    //Start, user is not logged in
-   const [isClicked, setIsClicked] = useState(false);
+   const [isClicked, setIsClicked] = useState(true);
    const [statusMessage, setStatusMessage] = useState('');
    const [username, setUsername] = useState('');
    const [password, setPassword] =  useState('');
