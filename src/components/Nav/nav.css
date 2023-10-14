@@ -20,7 +20,7 @@
 }
 .playlist-dropdown {
     position: absolute;
-    top: 95%;
+    top: 90%;
     left: 0;
     z-index: 1000;
     display: none;
