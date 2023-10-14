@@ -9,7 +9,6 @@
 .profile-dropdown {
     position: absolute;
     top: 150%;
-    left: -73%;
     z-index: 1000;
     display: none;
     overflow-y: scroll;
@@ -25,4 +24,10 @@
 }
 .profile-dropdown-trigger {
     margin: 0px;
+}
+.profile-button {
+    background-color: white;
+    padding: 5px;
+    border-radius: 12px;
+    border: 2px solid black;
 }

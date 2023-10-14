@@ -17,12 +17,29 @@ const ProfileIcon = () => {
         if(profile.isLoggedIn === true){
             return(
             <h1 
-                className="button"
-                onClick={()=> {dispatch(userLogout())}}>Logout</h1>
+                className="profile-button"
+                onClick={()=> {
+                    dispatch(userLogout())
+
+                    let local;
+                    if(window.location.href.includes('localhost')){
+                        local = 'http://localhost:3001'
+                    }else{
+                        local = 'https://rokorium-wiki.herokuapp.com'
+                    }
+
+                    fetch(`${local}/rapi/logout/`, {
+                        method: "POST",
+                        credentials: 'include',
+                        headers: {
+                            "Content-type": "application/json; charset=UTF-8"
+                        }
+                    })
+                }}>Logout</h1>
             )
         } else {
             return(
-            <h1 className="button">Login</h1>
+            <h1 className="profile-button">Login</h1>
             )
         }
     }

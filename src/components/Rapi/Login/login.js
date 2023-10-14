@@ -25,7 +25,7 @@ const Login = (props) => {
        local = 'https://rokorium-wiki.herokuapp.com'
    }
 
-   const {isLoading, data} = useFetch(`${local}/rapi/login/`, {
+   const {isLoading, data} = useFetch(`${local}/rapi/login`, {
        method: "POST",
        body: JSON.stringify({
            username: username,
@@ -34,8 +34,7 @@ const Login = (props) => {
        credentials: 'include',
        headers: {
            "Content-type": "application/json; charset=UTF-8"
-       },
-       depends: [isClicked]
+       }
    })
    //When button is clicked, change clicked to false (Ensure Trigger once per click)
    useEffect(()=>{
@@ -87,8 +86,14 @@ useEffect(()=>{
                 }
             })
         } else {
-        console.log('Login Failed: '+ JSON.stringify(data))
-        setStatusMessage(`Invalid Username or Password`);
+            console.log('Login Failed: '+ JSON.stringify(data))
+            if(data.Result === 'Session Expired'){
+                setStatusMessage('');
+            } else {
+                setStatusMessage(`Access Denied`);
+            }
+        
+        
         }
     }
 },[data, isLoading,dispatch])
