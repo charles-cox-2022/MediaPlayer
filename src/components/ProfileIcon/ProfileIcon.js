@@ -1,6 +1,8 @@
 //Required Libraries
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import {useState, useEffect} from "react";
+import useFetch from "react-fetch-hook";
 
 //Required CSS Files
 import './profile.css';
@@ -12,6 +14,8 @@ import { userLogout } from "../Rapi/Redux/profileSlice";
 const ProfileIcon = () => {
     let profile = useSelector((state) => state.profile)
     const dispatch = useDispatch();
+
+    
 
     const display = () => {
         if(profile.isLoggedIn === true){

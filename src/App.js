@@ -12,6 +12,7 @@ import Rapi from './components/Rapi/rapi';
 import MediaPlayer from './components/MediaPlayer/MediaPlayer';
 import ProfileIcon from './components/ProfileIcon/ProfileIcon';
 import Nav from './components/Nav/Nav';
+import SessionCheck from './components/Rapi/SessionCheck/SessionCheck';
 
 //If the user is not logged in, only show the login screen.
 const display = (loggedIn, PopUp) => {
@@ -26,7 +27,7 @@ const display = (loggedIn, PopUp) => {
   if(loggedIn === true){
     return(
       <div className='grid-content grid-item center padding15'>
-        
+        <SessionCheck/>
         <MediaPlayer/>
       </div>
     )
