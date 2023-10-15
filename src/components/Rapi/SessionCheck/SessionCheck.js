@@ -24,7 +24,7 @@ const SessionCheck = () => {
         console.log(`clearing interval`);
         clearInterval(interval);
         };
-        }, []); // has no dependency - this will be called on-component-mount
+        }, [refresh]); // has no dependency - this will be called on-component-mount
 
     let local;
     //Are we Local or need to use Heroku?
@@ -53,7 +53,8 @@ const SessionCheck = () => {
             if(data.Result === 'Session Expired'){
                 //Log user in
                 console.log('Session Expired');
-                dispatch(userLogout())
+                dispatch(userLogout());
+                setRefresh(false)
             } else {
             }
             setRefresh(false)
