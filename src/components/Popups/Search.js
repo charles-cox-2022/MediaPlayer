@@ -18,12 +18,12 @@ const SearchMedia = (props) => {
 
     let local;
     if(window.location.href.includes('localhost')){
-        local = 'http://localhost:3001'
+        local = 'https://localhost:3003'
     }else{
         local = 'https://rokorium-wiki.herokuapp.com'
     }
 
-    const {isLoading, data} = useFetch(`${local}/rapi/youtube/search`, {
+    const {isLoading, data} = useFetch(`${local}/auth/mediaplayer/search`, {
         method: "POST",
         body: JSON.stringify({
             type: 'search',

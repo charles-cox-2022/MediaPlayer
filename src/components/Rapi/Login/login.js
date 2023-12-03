@@ -20,17 +20,13 @@ const Login = (props) => {
    let local;
    //Are we Local or need to use Heroku?
    if(window.location.href.includes('localhost')){
-       local = 'http://localhost:3001'
+       local = 'https://localhost:3003'
    }else{
        local = 'https://rokorium-wiki.herokuapp.com'
    }
 
-   const {isLoading, data} = useFetch(`${local}/rapi/login`, {
-       method: "POST",
-       body: JSON.stringify({
-           username: username,
-           password: password
-       }),
+   const {isLoading, data} = useFetch(`${local}/auth/sessioncheck`, {
+       method: "get",
        credentials: 'include',
        headers: {
            "Content-type": "application/json; charset=UTF-8"
@@ -55,15 +51,17 @@ useEffect(()=>{
             dispatch(userLogin({
                 id: data.id,
                 username: data.username,
-                isAdmin: data.isAdmin,
-                isLoggedIn: true
+                isLoggedIn: data.auth
             }))
             getPlaylists(data.id).then((res) => {
-                if(res[0] === undefined){
+                if(res === false){
                     let newPlaylist = [{
                         id: -1,
-                        pId: '',
-                        name: 'New Playlist',
+                        owner_id: data.id,
+                        info: {
+                            pId: '',
+                            name: 'New Playlist', 
+                        },
                         media: [
                             {
                             'ID':0,

@@ -3,12 +3,12 @@ const getPlaylists = async (user_id) => {
     let result;
     let local;
     if(window.location.href.includes('localhost')){
-        local = 'http://localhost:3001'
+        local = 'https://localhost:3003'
     }else{
         local = 'https://rokorium-wiki.herokuapp.com'
     }
 
-const playlists = await fetch(`${local}/rapi/youtube/getPlaylists`, {
+const playlists = await fetch(`${local}/auth/mediaplayer/getPlaylists`, {
     method: "POST",
     body: JSON.stringify({
         user: {

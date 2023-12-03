@@ -27,7 +27,7 @@ const ProfileIcon = () => {
 
                     let local;
                     if(window.location.href.includes('localhost')){
-                        local = 'http://localhost:3001'
+                        local = 'https://localhost:3003'
                     }else{
                         local = 'https://rokorium-wiki.herokuapp.com'
                     }

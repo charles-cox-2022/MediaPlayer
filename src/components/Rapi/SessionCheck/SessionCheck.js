@@ -29,12 +29,12 @@ const SessionCheck = () => {
     let local;
     //Are we Local or need to use Heroku?
     if(window.location.href.includes('localhost')){
-        local = 'http://localhost:3001'
+        local = 'https://localhost:3003'
     }else{
         local = 'https://rokorium-wiki.herokuapp.com'
     }
 
-    const {isLoading, data} = useFetch(`${local}/rapi/checkSession`, {
+    const {isLoading, data} = useFetch(`${local}/auth/SessionCheck`, {
         method: "POST",
         body: JSON.stringify({
         }),
@@ -50,7 +50,7 @@ const SessionCheck = () => {
         //if Data is valid and component is not loading
         if(data && !isLoading){
             //if auth is true
-            if(data.Result === 'Session Expired'){
+            if(data.auth === false){
                 //Log user in
                 console.log('Session Expired');
                 dispatch(userLogout());

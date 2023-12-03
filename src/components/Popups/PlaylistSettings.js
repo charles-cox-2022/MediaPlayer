@@ -23,8 +23,11 @@ const PlaylistSettings = () => {
     const playlists = useSelector((state) => state.playlists)
     let newPlaylist = [{
         id: -1,
-        pId: '',
-        name: 'New Playlist',
+        owner_id: profile.id,
+        info: {
+            pId: '',
+            name: 'New Playlist', 
+        },
         media: [
             {
             'ID':0,
@@ -32,8 +35,7 @@ const PlaylistSettings = () => {
             'SongImg':"https://i.ytimg.com/vi/okVTSehE414/default.jpg",
             'SongName':"IVE"
         }
-        ]
-    
+        ]                    
     }]
 
 
@@ -55,7 +57,7 @@ const PlaylistSettings = () => {
                     dispatch(updatePlaylist(currentPlaylist));
                     savePlaylists(currentPlaylist, profile.id);
                 }}>Save</h1>
-                <h1 className="button" onClick={() => {savePlaylists(newPlaylist, profile.id).then((data) => {dispatch(createPlaylist(data))})}}>Create</h1>
+                <h1 className="button" onClick={() => {savePlaylists(newPlaylist, profile.id).then(getPlaylists(profile.id).then((data) => {dispatch(updatePlaylists(data))}))}}>Create</h1>
                 <h1 className="button" onClick={() => {getPlaylists(profile.id).then((data) => {dispatch(updatePlaylists(data))})}}>Reload</h1>
             </div>
             <div className="center">
