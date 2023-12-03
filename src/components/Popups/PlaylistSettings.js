@@ -7,7 +7,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { updatePlaylist, updatePlaylists } from "../Redux/Slice_Playlists";
 import { updateCurrentPlaylist } from "../Redux/Slice_CurrentPlaylist";
 import { updateName } from "../Redux/Slice_CurrentPlaylist";
-import { createPlaylist } from "../Redux/Slice_Playlists";
 import { deletePlaylist } from "../Redux/Slice_Playlists";
 import getPlaylists from "../API/getPlaylists";
 import savePlaylists from "../API/savePlaylists";

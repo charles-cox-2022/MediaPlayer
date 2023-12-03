@@ -1,6 +1,6 @@
 //Required Libraries
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {useState, useEffect} from "react";
 import useFetch from "react-fetch-hook";
 
@@ -15,13 +15,13 @@ const SessionCheck = () => {
     const [refresh,setRefresh] = useState(false)
 
     useEffect(() => {
-        console.log(`initializing interval`);
+        //console.log(`initializing interval`);
         const interval = setInterval(() => {
            setRefresh(true)
         }, 30000);
         
         return () => {
-        console.log(`clearing interval`);
+        //console.log(`clearing interval`);
         clearInterval(interval);
         };
         }, [refresh]); // has no dependency - this will be called on-component-mount
@@ -35,7 +35,7 @@ const SessionCheck = () => {
     }
 
     const {isLoading, data} = useFetch(`${local}/auth/SessionCheck`, {
-        method: "POST",
+        method: "get",
         body: JSON.stringify({
         }),
         credentials: 'include',

@@ -1,33 +1,33 @@
 //Stores data about the playlists the user has loaded
 import {createSlice, current} from '@reduxjs/toolkit';
 
-const playlistTemplate = (id) => {
-    return({
-    id: id,
-    pId: '',
-    name: 'New Playlist',
-    media: [
-        {
-            "ID": 0,
-            "SongID": "z2ZjutyxmjA",
-            "SongName": "aespa 에스파 'Life's Too Short (English Ver.)' MV",
-            "SongImg": "https://i.ytimg.com/vi/z2ZjutyxmjA/default.jpg"
-        },
-        {
-            "ID": 1,
-            "SongID": "H69tJmsgd9I",
-            "SongName": "[STATION] aespa 에스파 'Dreams Come True' MV",
-            "SongImg": "https://i.ytimg.com/vi/H69tJmsgd9I/default.jpg"
-        },
-        {
-            "ID": 2,
-            "SongID": "G8GaQdW2wHc",
-            "SongName": "IZ*ONE (아이즈원) 'Panorama' MV",
-            "SongImg": "https://i.ytimg.com/vi/G8GaQdW2wHc/default.jpg"
-        }
-    ]
+// const playlistTemplate = (id) => {
+//     return({
+//     id: id,
+//     pId: '',
+//     name: 'New Playlist',
+//     media: [
+//         {
+//             "ID": 0,
+//             "SongID": "z2ZjutyxmjA",
+//             "SongName": "aespa 에스파 'Life's Too Short (English Ver.)' MV",
+//             "SongImg": "https://i.ytimg.com/vi/z2ZjutyxmjA/default.jpg"
+//         },
+//         {
+//             "ID": 1,
+//             "SongID": "H69tJmsgd9I",
+//             "SongName": "[STATION] aespa 에스파 'Dreams Come True' MV",
+//             "SongImg": "https://i.ytimg.com/vi/H69tJmsgd9I/default.jpg"
+//         },
+//         {
+//             "ID": 2,
+//             "SongID": "G8GaQdW2wHc",
+//             "SongName": "IZ*ONE (아이즈원) 'Panorama' MV",
+//             "SongImg": "https://i.ytimg.com/vi/G8GaQdW2wHc/default.jpg"
+//         }
+//     ]
 
-})}
+// })}
 let defaultState = [];
 //    {
 //     id: 0,

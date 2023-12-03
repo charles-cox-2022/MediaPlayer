@@ -85,8 +85,8 @@ useEffect(()=>{
             })
         } else {
             console.log('Login Failed: '+ JSON.stringify(data))
-            if(data.Result === 'Session Expired'){
-                setStatusMessage('');
+            if(data.Action === 'Redirect'){
+                window.location = data.redirect
             } else {
                 setStatusMessage(`Access Denied`);
             }

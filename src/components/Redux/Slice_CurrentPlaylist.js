@@ -331,7 +331,7 @@ export const sliceCurrentPlaylists = createSlice({
         removeSong: (state, action) => {
             let playlist = []
             state[0].media.forEach(e => {
-                if(e.ID != action.payload.ID){
+                if(e.ID !== action.payload.ID){
                     playlist.push(e)
                 }                
             });
