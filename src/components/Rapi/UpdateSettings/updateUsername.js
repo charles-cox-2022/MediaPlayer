@@ -23,11 +23,15 @@ const UpdateUsername = (props) => {
 
    let local;
    //Are we Local or need to use Heroku?
+   
    if(window.location.href.includes('localhost')){
-       local = 'http://localhost:3001'
-   }else{
-       local = 'https://rokorium-wiki.herokuapp.com'
-   }
+    local = 'https://localhost:3003'
+    }else if (window.location.href.includes('rapi.rokorium.com')){
+        local = 'https://rapi.rokorium.com:3003'
+    } 
+    else {
+        local = 'https://rokorium-wiki.herokuapp.com'
+    }
 
    const {isLoading, data} = useFetch(`${local}/rapi/updateUser/`, {
        method: "POST",

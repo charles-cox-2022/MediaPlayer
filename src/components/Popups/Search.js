@@ -17,12 +17,15 @@ const SearchMedia = (props) => {
     const [search,setSearch] = useState('');
 
     let local;
-    if(window.location.href.includes('localhost')){
-        local = 'https://localhost:3003'
-    }else{
+    //Are we Local or need to use Heroku?
+   if(window.location.href.includes('localhost')){
+    local = 'https://localhost:3003'
+    }else if (window.location.href.includes('rapi.rokorium.com')){
+        local = 'https://rapi.rokorium.com:3003'
+    } 
+    else {
         local = 'https://rokorium-wiki.herokuapp.com'
     }
-
     const {isLoading, data} = useFetch(`${local}/auth/mediaplayer/search`, {
         method: "POST",
         body: JSON.stringify({

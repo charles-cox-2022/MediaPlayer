@@ -21,7 +21,10 @@ const Login = (props) => {
    //Are we Local or need to use Heroku?
    if(window.location.href.includes('localhost')){
        local = 'https://localhost:3003'
-   }else{
+   }else if (window.location.href.includes('rapi.rokorium.com')){
+       local = 'https://rapi.rokorium.com:3003'
+   } 
+   else {
        local = 'https://rokorium-wiki.herokuapp.com'
    }
 
@@ -50,7 +53,7 @@ useEffect(()=>{
             //Log user in
             dispatch(userLogin({
                 id: data.id,
-                username: data.username,
+                username: data.user,
                 isLoggedIn: data.auth
             }))
             getPlaylists(data.id).then((res) => {
@@ -98,35 +101,7 @@ useEffect(()=>{
    
 return (
     <React.Fragment>
-        <div className="flex-column margin15 padding25 center grey bubble" id="loginField">
-            <h1 className="noExtras">Login</h1>
-            <div className="">
-                {statusMessage}
-            </div>
-            <div>
-                <label style={{fontSize:"21px"}} htmlFor="username">Username: </label>
-                <input type="text" id="RA-username" name="username"></input><br/>
-            </div>
-            <div>
-                <label style={{fontSize:"21px"}} htmlFor="Name">Password: </label>
-                <input type="password" id="RA-password" name="password"></input><br/>
-            </div>
-            <div>
-            <button className='button' onClick={ () => {
-                setUsername(document.getElementById("RA-username").value)
-                setPassword(document.getElementById("RA-password").value)
-                setIsClicked(true)
-                }}>
-                Login
-            </button>
-            
-            <button className="button" onClick={ () => {
-                props.setIsRegistering(true)
-                setIsClicked(true)
-
-            }}>Register </button>
-            </div>
-        </div>
+        
     </React.Fragment>
 )
 }
